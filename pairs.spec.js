@@ -1,3 +1,11 @@
+/**************************
+*
+* THIS IS A TESTING FILE
+*
+* DO NOT MODIFY THIS FILE
+*
+***************************/
+
 import test from 'ava';
 import pairs from './pairs';
 
