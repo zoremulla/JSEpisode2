@@ -22,7 +22,7 @@ In this exercise your objective will be to write a `pairs()` function.
   ```
 * Install `yarn`:
   ```bash
-  $ npm install -g yarn
+  $ brew install yarn --without-node
   ```
   
 #### The Files
