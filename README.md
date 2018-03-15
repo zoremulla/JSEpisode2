@@ -27,10 +27,10 @@ In this exercise your objective will be to write a `pairs()` function.
   
 #### The Files
 
-Clone this repository (make sure you clone it into your `development` directory):
+**Fork** this repository and clone your fork (make sure you clone it into your `development` directory):
 
 ```bash
-$ git clone https://github.com/JoinCODED/JSEpisode1.git
+$ git clone https://github.com/<your_username>/JSEpisode1.git
 ```
 
 Inside you'll find two `.js` files:
