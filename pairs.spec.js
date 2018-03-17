@@ -9,29 +9,39 @@
 import test from 'ava';
 import pairs from './pairs';
 
-test('when passed nothing, returns an empty array', t => {
-	t.deepEqual(pairs(), []);
+test('should return an empty array when passed nothing', t => {
+  const result = pairs()
+	t.deepEqual(result, [], `Expected [] got ${JSON.stringify(result)}`);
 });
 
-test('when passed an empty array, returns an empty array', t => {
-	t.deepEqual(pairs([]), []);
+test('should return an empty array when passed an empty array', t => {
+  const result = pairs([])
+	t.deepEqual(result, [], `Expected [] got ${JSON.stringify(result)}`);
 });
 
-test('when passed an array with two items, returns an array with a single pair of those two items', t => {
-	t.is(pairs(['asis', 'hamsa']).length, 1);
-	t.is(pairs(['asis', 'hamsa'])[0].length, 2);
-	t.true(pairs(['asis', 'hamsa'])[0].includes('asis'));
-	t.true(pairs(['asis', 'hamsa'])[0].includes('hamsa'));
+test('should return an array with a single pair of items when passed an array with just two items', t => {
+  const names = ['asis', 'hamsa'];
+  const result = pairs(names);
+	t.is(result.length, 1,
+    `Expected pairs(${JSON.stringify(names)}) to return an array with a single pair (array of two), instead got ${JSON.stringify(result)}`);
+	t.is(result[0].length, 2,
+    `Expected pairs(${JSON.stringify(names)}) to return an array with a single pair (array of two), instead got ${JSON.stringify(result)}`);
+	t.true(result[0].includes('asis'),
+    `Expected 'asis' to be in ${JSON.stringify(result[0])} for pairs(${JSON.stringify(names)})`);
+	t.true(result[0].includes('hamsa'),
+    `Expected 'hamsa' to be in ${JSON.stringify(result[0])} for pairs(${JSON.stringify(names)})`);
 });
 
-test('when passed multiple names, returns an array of pairs', t => {
-  let names = ['asis', 'hamsa', 'fawas', 'mishmish'];
-  // console.log(pairs(names.slice(0)));
-  t.is(pairs(names).length, 2);
-  t.true(pairs(names).every(pair => pair.length == 2));
+test('should return an array of pairs when passed multiple names', t => {
+  const names = ['asis', 'hamsa', 'fawas', 'mishmish'];
+  const result = pairs(names);
+  t.is(result.length, 2,
+    `Expected pairs(${JSON.stringify(names)}) to return an array of length 2, instead got ${JSON.stringify(result)}`);
+  t.true(result.every(pair => pair.length == 2),
+    `Expected pairs(${JSON.stringify(names)}) to return an array of pairs (arrays of length 2) instead got ${JSON.stringify(result)}`);
 });
 
-test('pairs are randomized', t => {
+test('pairs should be randomized', t => {
   let names = ['asis', 'hamsa', 'fawas', 'mishmish'];
   let pairsets = [...Array(10)].map(() => pairs(names.slice(0)));
   t.false(pairsets.every(pairset =>
@@ -40,7 +50,10 @@ test('pairs are randomized', t => {
   );
 });
 
-test('can handle an odd number of names, the last "pair" is an array with one name', t => {
+test('should be able to handle an odd number of names, the last array should contain only one name', t => {
   let names = ['asis', 'hamsa', 'fawas', 'mishmish', 'hussein'];
-  t.is(pairs(names).pop().length, 1);
+  let result = pairs(names)
+  let last = result.pop()
+  t.is(last.length, 1,
+    `Expected the last "pair" to be an array with a single name, instead got ${JSON.stringify(result.concat([last]))}`);
 });
