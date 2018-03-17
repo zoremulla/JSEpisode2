@@ -49,11 +49,9 @@ Install all the requirements:
 Run the tests:
 
 ```bash
-$ yarn test -- --watch
+$ yarn test
 ```
 
 This command will run the testing file and test your `pairs()` function to make sure it has all the required features.  
-The tests will keep running every time you make changes to `pairs.js`.  
-To exit the test-runner hit `ctrl+C`.
 
 You'll know when you're done when your code passes all the tests.
