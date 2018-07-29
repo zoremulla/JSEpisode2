@@ -21,7 +21,7 @@ function pairs(names) {
   // Your code goes here
 }
 
-export default pairs;
+module.exports = pairs;
 
 /**********************************************
 * READ ME!!!!
@@ -40,3 +40,5 @@ export default pairs;
 Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random()*this.length), 1)[0];
 }
+
+console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein', 'Lailz', 'Mr Potato']));
