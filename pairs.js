@@ -8,7 +8,7 @@
 *       [['Mishmish', 'Asis'], ['Fawas', 'Hamsa']]
 *
 * - It can handle an odd number of names:
-*       pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein])
+*       pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein'])
 *       returns [['Mishmish', 'Fawas'], ['Asis', 'Hussein'], ['Hamsa']]
 *
 * - It returns an empty array if it gets passed an empty array:
@@ -26,7 +26,7 @@ module.exports = pairs;
 /**********************************************
 * READ ME!!!!
 *
-* We've including this handy method for you.
+* We've included this handy method for you.
 * It will remove a random element from an array
 * and return it to you.
 *
